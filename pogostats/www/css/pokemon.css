@@ -1,0 +1,10 @@
+.pokemons {
+  border-bottom: 1px solid #dbd7ba;
+}
+
+.pokemons .name {
+  color: #3D3D3D;
+}
+.pokemons .max-cp {
+  color: #3D3D3D;
+}
