@@ -18,10 +18,40 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-
+	
+	
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="types.css">
+	
+	
+	<!-- JQUERY -->
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	
+	<!-- Handlebars -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	
+	<!-- Pokemon datastore -->
+	<script src="pokemon.js"></script>
+	
+<script type="text/javascript">
+Handlebars.registerHelper('lowercase', function(text) {
+  return text.toLowerCase();
+});
 
+	
+$(document).ready(function(e) {
+	var template = $('#pokemon-template').html();
+	var compiled = Handlebars.compile(template);
+	
+	for (var i = 0; i < pokemons.length; i++){
+		var pokemon = pokemons[i];
+		
+		console.log(pokemon)
+		var rendered = compiled(pokemon);
+		$('#pokemons').append(rendered);
+	}
+});
+</script>
 </head>
 
 <body>
@@ -40,23 +70,25 @@
             <input type="text" class="form-control" id="searchValue">
         </div>
     </div>
-
-    <div class="row pokemon">
+	
+	<script id="pokemon-template" type="x-handlebars-template">
+	<div class="row pokemon">
         <div class="col-md-2">
-            <h3><span class="id">#001</span></h3>
+            <h3><span class="id">#{{ id }}</span></h3>
         </div>
         <div class="col-md-10">
-            <h3><span class="name">Bulbasaur</span></h3>
+            <h3><span class="name">{{ name }}</span></h3>
         </div>
 
         <div class="col-md-2">
-            <img src="https://www.pokego.fyi/img/pokemon/bulbasaur.png" width="80" height="60" />
+            <img src="https://www.pokego.fyi/img/pokemon/{{lowercase name}}.png" width="80" height="60" />
         </div>
         <div class="col-md-4">
             <p>Type</p>
             <p>
-                <span class="label grass">Grass</span>
-                <span class="label poison">Poison</span>
+				{{#type}}
+				<span class="label {{.}}">{{.}}</span>
+				{{/type}}
             </p>
         </div>
         <div class="col-md-6">
@@ -64,102 +96,13 @@
             <span class="max-cp">1300</span>
         </div>
     </div>
+	</script>
+	
+	<div id="pokemons">
+	
+	</div>
 
-
-    <div class="row pokemon">
-        <div class="col-md-2">
-            <h3><span class="id">#002</span></h3>
-        </div>
-        <div class="col-md-10">
-            <h3><span class="name">Ivysaur</span></h3>
-        </div>
-
-        <div class="col-md-2">
-            <img src="https://www.pokego.fyi/img/pokemon/ivysaur.png" width="80" height="60" />
-        </div>
-        <div class="col-md-4">
-            <p>Type</p>
-            <p>
-                <span class="label grass">Grass</span>
-                <span class="label poison">Poison</span>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <p>Max CP</p>
-            <span class="max-cp">1300</span>
-        </div>
-    </div>
-
-
-    <div class="row pokemon">
-        <div class="col-md-2">
-            <h3><span class="id">#003</span></h3>
-        </div>
-        <div class="col-md-10">
-            <h3><span class="name">Venusaur</span></h3>
-        </div>
-
-        <div class="col-md-2">
-            <img src="https://www.pokego.fyi/img/pokemon/venusaur.png" width="80" height="60" />
-        </div>
-        <div class="col-md-4">
-            <p>Type</p>
-            <p>
-                <span class="label grass">Grass</span>
-                <span class="label poison">Poison</span>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <p>Max CP</p>
-            <span class="max-cp">1300</span>
-        </div>
-    </div>
-
-    <div class="row pokemon">
-        <div class="col-md-2">
-            <h3><span class="id">#004</span></h3>
-        </div>
-        <div class="col-md-10">
-            <h3><span class="name">Charmander</span></h3>
-        </div>
-
-        <div class="col-md-2">
-            <img src="https://www.pokego.fyi/img/pokemon/charmander.png" width="80" height="60" />
-        </div>
-        <div class="col-md-4">
-            <p>Type</p>
-            <p>
-                <span class="label fire">Fire</span>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <p>Max CP</p>
-            <span class="max-cp">1300</span>
-        </div>
-    </div>
-
-    <div class="row pokemon">
-        <div class="col-md-2">
-            <h3><span class="id">#005</span></h3>
-        </div>
-        <div class="col-md-10">
-            <h3><span class="name">Charmeleon</span></h3>
-        </div>
-
-        <div class="col-md-2">
-            <img src="https://www.pokego.fyi/img/pokemon/charmeleon.png" width="80" height="60" />
-        </div>
-        <div class="col-md-4">
-            <p>Type</p>
-            <p>
-                <span class="label fire">Fire</span>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <p>Max CP</p>
-            <span class="max-cp">1300</span>
-        </div>
-    </div>
+  
 
 </div> <!-- /container -->
 
