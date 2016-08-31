@@ -12,7 +12,10 @@
 .pokemons .avatar {
   image-rendering: pixelated;
 }
-.pokemons .icon {
+.pokemons .ion-star {
   color: #F08030;
   font-size: 18px;
+}
+.pokemons .egg {
+  color: #78C850;
 }
