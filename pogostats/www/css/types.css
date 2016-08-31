@@ -2,9 +2,8 @@
   text-shadow: 0 1px 1px rgba(0,0,0,0.5);
   font-weight: bold;
   font-size: 10px;
-  padding: 1px 5px 2px;
+  padding: 0 7px 1px;
   margin-right: 3px;
-  letter-spacing: 0.18em;
   color: #FFF;
   text-transform: uppercase;
   text-align: center;
@@ -65,4 +64,9 @@
 }
 .label.fairy {
   background: #EE99AC;
+}
+
+
+.tier-5 {
+  color: #F08030;
 }

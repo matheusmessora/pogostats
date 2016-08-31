@@ -8,67 +8,93 @@ var PokemonService = function(){
     {
       id: 1,
       name: "Bulbasaur",
-      types: ["poison", "grass"]
+      types: ["poison", "grass"],
+      maxCP: 1071,
+      tier: 0
     },
     {
       id: 2,
       name: "Ivysaur",
-      types: ["poison", "grass"]
+      types: ["poison", "grass"],
+      maxCP: 1632,
+      tier: 1
     },
     {
       id: 3,
       name: "Venusaur",
-      types: ["poison", "grass"]
+      types: ["poison", "grass"],
+      maxCP: 2580,
+      tier: 5
     },
     {
       id: 4,
       name: "Charmander",
-      types: ["fire"]
+      types: ["fire"],
+      maxCP: 955,
+      tier: 0
     },
     {
       id: 5,
       name: "Charmeleon",
-      types: ["fire"]
+      types: ["fire"],
+      maxCP: 1557,
+      tier: 1
     },
     {
       id: 6,
       name: "Charizard",
-      types: ["fire", "flying"]
+      types: ["fire", "flying"],
+      maxCP: 2602,
+      tier: 5
     },
     {
       id: 7,
       name: "Squirtle",
-      types: ["water"]
+      types: ["water"],
+      maxCP: 1008,
+      tier: 0
     },
     {
       id: 8,
       name: "Wartortle",
-      types: ["water"]
+      types: ["water"],
+      maxCP: 1582,
+      tier: 1
     },
     {
       id: 9,
       name: "Blastoise",
-      types: ["water"]
+      types: ["water"],
+      maxCP: 2542,
+      tier: 5
     },
     {
       id: 10,
       name: "Caterpie",
-      types: ["bug"]
+      types: ["bug"],
+      maxCP: 1300,
+      tier: 0
     },
     {
       id: 11,
       name: "Metapod",
-      types: ["bug"]
+      types: ["bug"],
+      maxCP: 1300,
+      tier: 0
     },
     {
       id: 12,
       name: "Butterfree",
-      types: ["bug", "flying"]
+      types: ["bug", "flying"],
+      maxCP: 1300,
+      tier: 1
     },
     {
       id: 13,
       name: "Weedle",
-      types: ["bug", "poison"]
+      types: ["bug", "poison"],
+      maxCP: 1300,
+      tier: 0
     }
   ];
 

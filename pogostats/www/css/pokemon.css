@@ -7,4 +7,12 @@
 }
 .pokemons .max-cp {
   color: #3D3D3D;
+  font-size: 18px;
+}
+.pokemons .avatar {
+  image-rendering: pixelated;
+}
+.pokemons .icon {
+  color: #F08030;
+  font-size: 18px;
 }
