@@ -232,7 +232,7 @@ var PokemonService = function () {
     },
     {
       id: 29,
-      name: "Nidoran F!",
+      name: "Nidoran-f",
       types: ["poison"],
       maxCP: 876,
       tier: 0,
@@ -256,7 +256,7 @@ var PokemonService = function () {
     },
     {
       id: 32,
-      name: "Nidoran M!",
+      name: "Nidoran-m",
       types: ["poison"],
       maxCP: 843,
       tier: 0,
@@ -976,7 +976,7 @@ var PokemonService = function () {
     },
     {
       id: 122,
-      name: "Mr. Mime",
+      name: "mrmime",
       types: ["psychic", "fairy"],
       maxCP: 1494,
       tier: 0,
@@ -1054,14 +1054,14 @@ var PokemonService = function () {
       tier: 0,
       egg: 10
     },
-    {
-      id: 132,
-      name: "Ditto",
-      types: ["normal"],
-      maxCP: 919,
-      tier: 0,
-      egg: 0
-    },
+    // {
+    //   id: 132,
+    //   name: "Ditto",
+    //   types: ["normal"],
+    //   maxCP: 919,
+    //   tier: 0,
+    //   egg: 0
+    // },
     {
       id: 133,
       name: "Eevee",
@@ -1181,7 +1181,7 @@ var PokemonService = function () {
       maxCP: 3500,
       tier: 0,
       egg: 0
-    },
+    }
 
   ];
 
