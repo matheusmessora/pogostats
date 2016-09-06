@@ -1,0 +1,25 @@
+/* Empty. Add your own CSS if you like */
+body {
+  background: #eceadb;
+  color: #a9a9a9;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #a9a9a9;
+  font-weight: 400;
+}
+h3 {
+  font-size: 18px;
+}
+.pane, .view {
+  background: #eceadb;
+  color: #a9a9a9;
+}
+
+label {
+  color: #3D3D3D;
+}
+input {
+  border-radius: 3px;
+  /*border: 1px solid #FFF;*/
+  padding: 3px 10px;
+}
