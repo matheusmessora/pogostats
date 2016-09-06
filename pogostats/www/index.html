@@ -52,10 +52,28 @@
         </div>
       </div>
 
+      <div class="row row-center">
+        <div class="col">
+          <button class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(2)">
+            2 km
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(5)">
+            5 km
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(10)">
+            10 km
+          </button>
+        </div>
+      </div>
+
       <ion-list>
         <div class="list">
 
-          <div class="pokemons" ng-repeat="pokemon in pokemons | filter:$ctrl.query">
+          <div class="pokemons" ng-repeat="pokemon in pokemons | filter:$ctrl.query | eggFilter:selectedEgg">
             <div class="row">
               <div class="col col-20">
                 <h3>#{{pokemon.id}}</h3>

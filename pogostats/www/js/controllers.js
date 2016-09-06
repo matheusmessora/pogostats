@@ -1,6 +1,35 @@
 angular.module('starter.controllers', [])
 
+.filter('eggFilter', function() {
+  return function(pokemons, km){
+    if(!km){
+      return pokemons;
+    }
+    var result = [];
+
+    angular.forEach(pokemons, function(pokemon){
+      if(pokemon.egg == km){
+        result.push(pokemon);
+      }
+    });
+
+    return result;
+  }
+
+})
+
 .controller('HomeCtrl', function($scope, pokemonService) {
+
+  $scope.selectedEgg = undefined; // (?)
+
+  $scope.setEggFilter = function(egg){
+    if(egg == $scope.selectedEgg){
+      $scope.selectedEgg = undefined;
+    }else {
+      $scope.selectedEgg = egg;
+    }
+
+  };
 
   $scope.pokemons = pokemonService.getAll();
 
