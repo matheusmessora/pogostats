@@ -62,7 +62,7 @@
         <div class="col">
           <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
-            <input ng-model="$ctrl.query" type="text" placeholder="Pesquisar"/>
+            <input ng-model="search.name" type="text" placeholder="Pesquisar"/>
           </label>
         </div>
       </div>
@@ -88,17 +88,17 @@
       <ion-list>
         <div class="list">
 
-          <div class="pokemons" ng-repeat="pokemon in pokemons | filter:$ctrl.query | eggFilter:selectedEgg">
+          <div class="pokemons" ng-repeat="pokemon in pokemons | filter:search:strict | eggFilter:selectedEgg">
             <div class="row">
               <div class="col col-20">
-                <h3>#{{pokemon.id}}</h3>
+                <h3>#{{::pokemon.id}}</h3>
               </div>
               <div class="col col-40">
                 <h3 class="name" ng-bind-html="formatName(pokemon.name)"></h3>
               </div>
               <div class="col col-15">
                 <span ng-show="hatchable(pokemon.egg)" class="label grass"> <span class="icon ion-egg"></span> <span
-                  class="">{{pokemon.egg}} km</span></span>
+                  class="">{{::pokemon.egg}} km</span></span>
               </div>
               <!--<div class="col" style="text-align: right">-->
               <!--<span ng-repeat="i in iterate(pokemon.tier) track by $index" class="icon ion-star"></span>-->
@@ -113,12 +113,12 @@
               <div class="col col-60">
                 <p>TIPO</p>
                 <p>
-                  <span ng-repeat="type in pokemon.types" class="label {{type}}">{{type}}</span>
+                  <span ng-repeat="type in pokemon.types" class="label {{type}}">{{::type}}</span>
                 </p>
               </div>
               <div class="col">
                 <p>CP MAX</p>
-                <p><span class="max-cp">{{pokemon.maxCP}}</span></p>
+                <p><span class="max-cp">{{::pokemon.maxCP}}</span></p>
               </div>
 
             </div>
