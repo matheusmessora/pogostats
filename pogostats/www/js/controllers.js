@@ -18,9 +18,24 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, pokemonService) {
+.controller('HomeCtrl', function($scope, $ionicScrollDelegate, pokemonService) {
 
   $scope.selectedEgg = undefined; // (?)
+  $scope.scrollToTopButton = false;
+
+
+  $scope.scrollToTop = function() { //ng-click for back to top button
+    console.log("OPA scrolltoTop");
+    $ionicScrollDelegate.scrollTop();
+    $scope.scrollToTopButton=false;  //hide the button when reached top
+  };
+
+  $scope.getScrollPosition = function() {
+    var moveData = $ionicScrollDelegate.getScrollPosition().top;
+    $scope.$apply(function(){
+      $scope.scrollToTopButton = moveData > 150;
+    });
+  };
 
   $scope.setEggFilter = function(egg){
     if(egg == $scope.selectedEgg){

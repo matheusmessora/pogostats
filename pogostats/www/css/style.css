@@ -27,3 +27,14 @@ input {
 .button {
   font-size: 20px;
 }
+
+.float-button {
+  right: 5px;
+  top: 80%;
+  position: absolute;
+  border-radius: 6px;
+  background: #FFF;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}

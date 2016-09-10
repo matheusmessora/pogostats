@@ -25,24 +25,39 @@
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
 
+  <script>
+    var scrollToTop = document.getElementById("scrollToTop");
+
+    function myScrollFunc() {
+      var y = window.scrollY;
+      if (y > 1) {
+        scrollToTop.className = "bottomMenu show"
+      } else {
+        scrollToTop.className = "bottomMenu hide"
+      }
+    }
+
+    window.addEventListener("scroll", myScrollFunc);
+  </script>
+
 </head>
 
 <body ng-app="starter">
 <!-- The nav bar that will be updated as we navigate -->
 <!--<ion-nav-bar class="bar-positive">-->
-  <!--<ion-nav-back-button class="button-clear">-->
-    <!--<i class="ion-arrow-left-c"></i> Back-->
-  <!--</ion-nav-back-button>-->
+<!--<ion-nav-back-button class="button-clear">-->
+<!--<i class="ion-arrow-left-c"></i> Back-->
+<!--</ion-nav-back-button>-->
 <!--</ion-nav-bar>-->
 <div class="bar bar-header bar-positive">
   <h1 class="title">Treinador Pokemon GO</h1>
 </div>
 
-<ion-nav-view class="has-header"></ion-nav-view>
+<ion-nav-view id="container-view" class="has-header"></ion-nav-view>
 
 <script id="home.html" type="text/ng-template">
   <ion-view>
-    <ion-content>
+    <ion-content on-scroll="getScrollPosition()">
       <div class="row row-center">
         <div class="col">
           <label class="item item-input">
@@ -86,7 +101,7 @@
                   class="">{{pokemon.egg}} km</span></span>
               </div>
               <!--<div class="col" style="text-align: right">-->
-                <!--<span ng-repeat="i in iterate(pokemon.tier) track by $index" class="icon ion-star"></span>-->
+              <!--<span ng-repeat="i in iterate(pokemon.tier) track by $index" class="icon ion-star"></span>-->
               <!--</div>-->
             </div>
 
@@ -116,6 +131,15 @@
         </div>
       </ion-list>
     </ion-content>
+
+    <div class="float-button" ng-show="scrollToTopButton" ng-click="scrollToTop()">
+      <span class="height-fix">
+        <a class="content">
+          <i class="icon ion-arrow-up-b"> </i>
+        </a>
+      </span>
+    </div>
+
   </ion-view>
 </script>
 </body>
