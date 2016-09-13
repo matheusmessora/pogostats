@@ -62,24 +62,24 @@
         <div class="col">
           <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
-            <input ng-model="search.name" type="text" placeholder="Pesquisar"/>
+            <input ng-model="nameSearch" type="text" placeholder="Pesquisar"/>
           </label>
         </div>
       </div>
 
       <div class="row row-center">
         <div class="col">
-          <button class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(2)">
+          <button ng-class="{'activated-button': getEggFilter(2)}" class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(2)">
             2 km
           </button>
         </div>
         <div class="col">
-          <button class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(5)">
+          <button ng-class="{'activated-button': getEggFilter(5)}" class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(5)">
             5 km
           </button>
         </div>
         <div class="col">
-          <button class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(10)">
+          <button ng-class="{'activated-button': getEggFilter(10)}" class="button button-block icon-left ion-egg button-calm" ng-click="setEggFilter(10)">
             10 km
           </button>
         </div>
@@ -88,21 +88,18 @@
       <ion-list>
         <div class="list">
 
-          <div class="pokemons" ng-repeat="pokemon in pokemons | filter:search:strict | eggFilter:selectedEgg">
+          <div class="pokemons" ng-repeat="pokemon in scopefilteredPokemons | filter:nameSearch track by pokemon.id">
             <div class="row">
               <div class="col col-20">
                 <h3>#{{::pokemon.id}}</h3>
               </div>
               <div class="col col-40">
-                <h3 class="name" ng-bind-html="formatName(pokemon.name)"></h3>
+                <h3 class="name" ng-bind-html="pokemon.name" ></h3>
               </div>
               <div class="col col-15">
-                <span ng-show="hatchable(pokemon.egg)" class="label grass"> <span class="icon ion-egg"></span> <span
+                <span ng-show="pokemon.hatchable" class="label grass"> <span class="icon ion-egg"></span> <span
                   class="">{{::pokemon.egg}} km</span></span>
               </div>
-              <!--<div class="col" style="text-align: right">-->
-              <!--<span ng-repeat="i in iterate(pokemon.tier) track by $index" class="icon ion-star"></span>-->
-              <!--</div>-->
             </div>
 
             <div class="row">
